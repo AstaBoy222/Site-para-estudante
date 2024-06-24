@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site para Estudantes</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">Início</a></li>
+                <li><a href="#estudo">Estudo</a></li>
+                <li><a href="#criacao-imagens">Criação de Imagens</a></li>
+                <li><a href="#respostas">Perguntas e Respostas</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="home">
+            <h1>Bem-vindo ao Site para Estudantes</h1>
+            <p>Aqui você encontra ferramentas e recursos para auxiliar nos seus estudos.</p>
+        </section>
+        <section id="estudo">
+            <h2>Recursos de Estudo</h2>
+            <p>Conteúdo educacional em textos, imagens e vídeos.</p>
+            <div id="conteudo-estudo">
+                <!-- Conteúdo de estudo dinâmico -->
+            </div>
+        </section>
+        <section id="criacao-imagens">
+            <h2>Criação de Imagens</h2>
+            <p>Ferramenta para criar e editar imagens.</p>
+            <div id="editor-imagens">
+                <!-- Ferramenta de criação de imagens -->
+            </div>
+        </section>
+        <section id="respostas">
+            <h2>Perguntas e Respostas</h2>
+            <p>Digite sua pergunta abaixo e obtenha uma resposta.</p>
+            <input type="text" id="pergunta" placeholder="Digite sua pergunta...">
+            <button onclick="obterResposta()">Perguntar</button>
+            <div id="resposta">
+                <!-- Resposta aparecerá aqui -->
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Site para Estudantes. Todos os direitos reservados.</p>
+    </footer>
+    <script src="scripts.js"></script>
+</body>
+</html>
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 1em 0;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 1em;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+main {
+    padding: 2em;
+}
+
+section {
+    margin-bottom: 2em;
+}
+
+h1, h2 {
+    color: #007BFF;
+}
+
+#resposta {
+    margin-top: 1em;
+    padding: 1em;
+    background-color: #e9ecef;
+    border-radius: 5px;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1em 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+function obterResposta() {
+    const pergunta = document.getElementById("pergunta").value;
+    const resposta = document.getElementById("resposta");
+
+    if (pergunta) {
+        // Aqui você pode adicionar a lógica para buscar respostas (ex.: integração com API)
+        resposta.innerText = "Essa é uma resposta automática para a pergunta: " + pergunta;
+    } else {
+        resposta.innerText = "Por favor, digite uma pergunta.";
+    }
+}
